@@ -1,0 +1,18 @@
+## Interface: 16001
+## Title: CrateValue
+## Notes: Ranks Waylaid Crates by gold cost per Merchant's Favor, plus the gold cost of ACA / DSL reputation, using Auction House prices.
+## Author: MrHi6hway2
+## Version: 1.6.0
+## X-License: MIT
+## X-Category: Auction, Professions
+## SavedVariables: CrateValueDB
+## OptionalDeps: Auctionator, TradeSkillMaster
+## IconTexture: Interface\Icons\INV_Crate_07
+## AddonCompartmentFunc: CrateValue_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: CrateValue_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: CrateValue_OnAddonCompartmentLeave
+
+Data.lua
+Core.lua
+UI.lua
+Options.lua
