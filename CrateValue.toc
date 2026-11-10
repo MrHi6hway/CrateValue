@@ -2,7 +2,7 @@
 ## Title: CrateValue
 ## Notes: Ranks Waylaid Crates by gold cost per Merchant's Favor, plus the gold cost of ACA / DSL reputation, using Auction House prices.
 ## Author: MrHi6hway2
-## Version: 1.6.0
+## Version: 1.6.1
 ## X-License: MIT
 ## X-Category: Auction, Professions
 ## SavedVariables: CrateValueDB

@@ -1,5 +1,9 @@
 # CrateValue changelog
 
+## 1.6.1
+- Fixed Artisan Ore pricing: Dark Iron Ore now uses the item sold on the Auction House (11370) instead of a
+  different, non-tradeable item with the same name (11099).
+
 ## 1.6.0
 - Scan button says "Open AH to scan" while the Auction House is closed, and its tooltip explains why.
 - Fixed a possible UI taint: the addon no longer reassigns Blizzard's StaticPopupDialogs table.
