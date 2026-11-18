@@ -20,7 +20,7 @@ end
 
 local DEFAULTS = {
   source = "auto",          -- auto | auctionator | tsm | scan
-  includeCrateCost = false, -- add the Waylaid Crate's own AH price (for when you'd buy the crate)
+  includeCrateCost = true,  -- add the Waylaid Crate's own AH price (a looted crate could be sold instead)
   onlyOwned = false,
   tier = "All",
   sortKey = "perFavor",
@@ -293,7 +293,8 @@ function ns.Evaluate(crate)
     r.fillCost = r.best.cost
     r.total = r.fillCost
     if CrateValueDB.includeCrateCost then
-      r.total = r.crateCost and (r.total + r.crateCost) or nil
+      -- a crate with no known price counts as 0 so it stays in the ranking
+      r.total = r.total + (r.crateCost or 0)
     end
     if r.total then r.perFavor = r.total / r.favor end
   end
@@ -754,6 +755,10 @@ local function addCrateLines(tooltip, itemID)
   for _, b in ipairs(r.bundles) do
     local mark = (b == r.best) and "|cff00ff00>|r " or "   "
     tooltip:AddDoubleLine(format("%s%dx %s", mark, b.qty, ns.ItemName(b.itemID)), ns.Money(b.cost), 1, 1, 1)
+  end
+  if CrateValueDB.includeCrateCost then
+    tooltip:AddDoubleLine("   Empty crate (AH)", r.crateCost and ns.Money(r.crateCost) or "|cff808080no price, 0|r", 1, 1, 1)
+    if r.total then tooltip:AddDoubleLine("Total", ns.Money(r.total), 1, 0.82, 0) end
   end
   if r.perFavor then
     tooltip:AddDoubleLine("Cost per favor", ns.Money(r.perFavor), 1, 0.82, 0)

@@ -18,7 +18,8 @@ Interface is `16001`; check yours with `/dump select(4, GetBuildInfo())` and edi
   the full amount cheapest-first (marked `+`). Low supply is flagged, and the tooltip shows cost per favor for 1 vs several crates.
 - **Right-click a crate row** to set a material's price by hand (for example, what you pay a farmer). Hand-set prices always win.
 - Hover a Waylaid Crate anywhere (bags, AH) to see each bundle's cost and the cheapest one.
-- "Add the empty crate's AH price" adds the crate's own price, for when you'd buy crates rather than loot them.
+- "Add the empty crate's AH price" (on by default) adds the crate's own price: a crate you looted could be sold
+  instead, so it still costs you its AH value. Turn it off to count materials only.
 
 Commands: `/cval source auto|auctionator|tsm|scan`, `/cval price <item> <silver|1g20s|clear>`,
 `/cval favor <tier> <white> <green>`, `/cval scale <0.6-1.6>`, `/cval options`, `/cval minimap`, `/cval about`, `/cval reset`.

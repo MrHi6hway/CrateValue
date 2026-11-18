@@ -214,7 +214,7 @@ local function buildPanel()
   y = y - 30
   note("Auto uses your own scan when it is under 6 hours old, then Auctionator, then TSM.")
   y = y - 4
-  controls.crateCost = K.flatCheck(panel, "Add the empty crate's AH price (for when you buy crates)", 400, function(v)
+  controls.crateCost = K.flatCheck(panel, "Add the empty crate's AH price (its resale value, looted or bought)", 400, function(v)
     CrateValueDB.includeCrateCost = v; ns.ClearPriceCache(); if ns.Refresh then ns.Refresh() end
   end)
   row(controls.crateCost)
